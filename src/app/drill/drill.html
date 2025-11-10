@@ -9,8 +9,10 @@
     <button (click)="pauseTimer()">{{pauseLabel()}}</button>
     </div>
     </div>
-    @if (this.beepStack[0] >= this.timerValue()){
-        <app-whistle/>
+    <!-- Short Circuiting to update the stack only when needed -->
+    @if (this.beepStack[0] >= this.timerValue() && this.beepStack.shift()){
+       <audio preload="auto" src="whistle.wav" autoplay></audio>
+       
     }
      
   

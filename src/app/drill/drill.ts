@@ -1,12 +1,11 @@
 import { HttpParams } from '@angular/common/http';
 import { Component, OnInit, signal, WritableSignal } from '@angular/core';
 import { RouterLink } from "@angular/router";
-import { Whistle } from "../components/whistle/whistle";
 
 
 @Component({
   selector: 'app-drill',
-  imports: [RouterLink, Whistle],
+  imports: [RouterLink],
   templateUrl: './drill.html',
   styleUrl: './drill.css',
 })
@@ -37,8 +36,7 @@ export class Drill implements OnInit {
       this.startLabel.set("Reset")
       this.intervalID = setInterval(() => {
         this.timerValue.set(this.timerValue() - this.timerIncrement);
-    if(this.beepStack[0] >= this.timerValue())
-      console.log(this.beepStack.shift(), this.timerValue())
+    
     if (this.timerValue() <= 0)
       clearInterval(this.intervalID);
       }, 1000)
@@ -55,8 +53,5 @@ export class Drill implements OnInit {
     else
       this.pauseLabel.set("Pause")
   }
-  //
-  controlTimer(timerValue : WritableSignal<number>) {
-    
-  }
+
 }
