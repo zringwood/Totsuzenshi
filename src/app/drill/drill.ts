@@ -1,11 +1,12 @@
 import { HttpParams } from '@angular/common/http';
 import { Component, OnInit, signal, WritableSignal } from '@angular/core';
 import { RouterLink } from "@angular/router";
+import { Whistle } from "../components/whistle/whistle";
 
 
 @Component({
   selector: 'app-drill',
-  imports: [RouterLink],
+  imports: [RouterLink, Whistle],
   templateUrl: './drill.html',
   styleUrl: './drill.css',
 })
@@ -26,11 +27,9 @@ export class Drill implements OnInit {
   ngOnInit(): void {
     //We generate an array of beeps so that we can adjust the distribution later if we want to.
     for (let i = 0; i < this.beepStackLength; i++) {
-      this.beepStack[i] = Math.floor(Math.random() * this.drillLength)
+      this.beepStack[i] = Math.floor(5 + (Math.random() * (this.drillLength-5)))
     }
     this.beepStack.sort((a, b) =>   b - a)
-    
-    console.log(this.beepStack)
   }
 
   startTimer() {
@@ -39,7 +38,7 @@ export class Drill implements OnInit {
       this.intervalID = setInterval(() => {
         this.timerValue.set(this.timerValue() - this.timerIncrement);
     if(this.beepStack[0] >= this.timerValue())
-    console.log(this.beepStack.shift(), this.timerValue())
+      console.log(this.beepStack.shift(), this.timerValue())
     if (this.timerValue() <= 0)
       clearInterval(this.intervalID);
       }, 1000)

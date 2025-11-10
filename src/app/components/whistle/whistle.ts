@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-whistle',
@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './whistle.css',
 })
 export class Whistle {
-
+  
 }
