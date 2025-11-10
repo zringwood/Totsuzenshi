@@ -1,0 +1,22 @@
+button{
+    padding:32px 0 ;
+    font-size: larger;
+    background-color: lightblue;
+    border: none;
+    border-radius: 15px;
+    flex-grow: 1;
+}
+button:active{
+    background-color: rgb(138, 167, 177);
+}
+.button-container{
+    padding: 16px;
+    display:flex;
+    flex-direction: column;
+    row-gap: 20px;
+    height: 100vh;
+}
+h1{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}

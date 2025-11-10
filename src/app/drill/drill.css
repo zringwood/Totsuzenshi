@@ -1,0 +1,38 @@
+div.layout{
+    display:flex;
+    flex-direction: column;
+    row-gap: 15px;
+     justify-content: space-between; 
+    align-items: center;
+    height: 50vh;
+}
+span{
+   
+    font-size: 64pt;
+    font-family: 'Courier New', Courier, monospace;
+}
+div.timer-container{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+div.button-container{
+    display:flex;
+    justify-content: space-around;
+    width:100%;
+}
+button{
+    
+    padding:16px ;
+    font-size: larger;
+    background-color: lightblue;
+    border: none;
+    border-radius: 15px;
+    min-width: 125px;
+}
+button:active{
+    background-color: rgb(138, 167, 177);
+}
+button#back{
+    align-self: flex-start;
+}
